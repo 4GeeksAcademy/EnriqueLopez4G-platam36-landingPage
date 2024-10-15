@@ -1,6 +1,5 @@
 import React from 'react';
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 const imgs = [
 	'https://miro.medium.com/v2/resize:fit:1400/0*y6IcBe5J1AdALzXw.png',
@@ -34,17 +33,17 @@ const botons = [
 	'Add Interactivity',
 	'Go Full stack'
 ]
-const Card=()=> {
-	let cualPongo = Math.floor(Math.random()*5);
+const Card=( props)=> {
+	let cualPongo = props.itemCard;
     return (
-	 	<div className="card" style={{width: "18rem", margin: "auto"}}>
-			<img className="card-img-top" src={imgs[cualPongo]} style = {{ width: "100%", height: "auto" }} alt="Card image cap"/>
+	 	<div className="card mt-2" style={{width: "18rem", margin: "auto"}}>
+			<img className="card-img-top" src={imgs[cualPongo]} style = {{ width: "100%", height: "auto", minHeight: "150px" }} alt="Card image cap"/>
 			<div className="card-body" style={{ textAlign: "center" }}>
 				<h5 className="card-title"> {titlesReact[cualPongo]}</h5>
-            <p className="card-text">{rollitos[cualPongo]}</p>
-            <a href="#" className="btn btn-primary">{botons[cualPongo]}</a>
-         </div>
-      </div>
+          	    <p className="card-text" style = {{minHeight:"80px"}}>{rollitos[cualPongo]}</p>
+                <a href="#" className="btn btn-primary">{botons[cualPongo]}</a>
+            </div>
+        </div>
     )
 }
 
